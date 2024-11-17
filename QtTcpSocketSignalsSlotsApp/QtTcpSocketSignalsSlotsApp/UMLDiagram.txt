@@ -1,0 +1,31 @@
+@startuml
+skinparam shadowing false
+
+package "QtTcpSocketSignalsSlotsApp" {
+    class MyTcpClient {
+        + MyTcpClient(QObject *parent = nullptr)
+        + void doConnect(const QString &host)
+        + void connected()
+        + void disconnected()
+        + void readyRead()
+    }
+
+    class QTcpSocket {
+        + void connectToHost(const QString &host, quint16 port)
+        + void write(const QByteArray &data)
+        + void waitForBytesWritten(int msecs)
+        + void waitForReadyRead(int msecs)
+        + QByteArray readAll()
+        + qint64 bytesAvailable()
+    }
+
+    class QCoreApplication {
+        + QCoreApplication(int &argc, char **argv)
+        + int exec()
+    }
+
+    MyTcpClient "1" *-- "1" QTcpSocket : uses
+    QCoreApplication "1" *-- "1" MyTcpClient : creates
+}
+
+@enduml
