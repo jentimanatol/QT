@@ -96,7 +96,7 @@ loginscreen.ui
 ![UML Diagram](https://github.com/jentimanatol/QT/blob/main/UserPassword/UserPassword/Untitled%20Diagram.drawio.png) 
  
 ## License 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. 
+This project is licensed under the MIT License - see the LICENSE file for details. 
  
 ## Acknowledgements 
 - Qt for providing the framework for GUI development. 
