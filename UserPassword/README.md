@@ -103,4 +103,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - The authors of the C++ libraries used in this project. 
  
 ## Contact 
-If you have any questions or suggestions, feel free to contact me at [your-email@example.com](mailto:your-email@example.com). 
+If you have any questions or suggestions, feel free to contact me at [https://github.com/jentimanatol](mailto:your-email@example.com). 
