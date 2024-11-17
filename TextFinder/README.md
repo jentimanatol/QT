@@ -66,3 +66,4 @@ mainwindow.ui
 - **Simple and Intuitive:** The user interface is simple and easy to use. 
  
 ## Screenshots 
+![Main Window](https://github.com/jentimanatol/QT/blob/main/TextFinder/AnatolieTextFinder/mainWindow.jpg) 
