@@ -1,0 +1,69 @@
+Project description Qt application with a login screen that allows users to log in or register. The application should store user data in a text file, and usernames and passwords should be encrypted for security. The project includes the following classes: User, SuperUser, LoginScreen, and encryption functions.
+
+Project Structure:
+- UserPassword.pro
+- main.cpp
+- loginscreen.cpp
+- loginscreen.h
+- user.cpp
+- user.h
+- superuser.cpp
+- superuser.h
+- encryption.cpp
+- encryption.h
+- loginscreen.ui
+
+User Class:
+- File Name: user.h, user.cpp
+- Dependencies: None
+- Description: Represents a user with a username and password.
+- Methods:
+  - User(const std::string& username, const std::string& password)
+  - std::string getUsername() const
+  - std::string getPassword() const
+
+SuperUser Class:
+- File Name: superuser.h, superuser.cpp
+- Dependencies: user.h
+- Description: Inherits from User and represents a superuser with additional functionalities.
+- Methods:
+  - SuperUser(const std::string& username, const std::string& password)
+
+Encryption Functions:
+- File Name: encryption.h, encryption.cpp
+- Dependencies: None
+- Description: Provides simple encryption and decryption methods.
+- Methods:
+  - std::string encrypt(const std::string& str)
+  - std::string decrypt(const std::string& str)
+
+LoginScreen Class:
+- File Name: loginscreen.h, loginscreen.cpp
+- Dependencies: QMainWindow, QPushButton, QLineEdit, QLabel, QVBoxLayout, QMessageBox, user.h, superuser.h, encryption.h
+- Description: Represents the login screen with functionalities for logging in and registering users.
+- Methods:
+  - LoginScreen(QWidget *parent = nullptr)
+  - ~LoginScreen()
+  - void onLoginClicked()
+  - void onRegisterClicked()
+
+Main File:
+- File Name: main.cpp
+- Dependencies: loginscreen.h
+- Description: Entry point of the application. Initializes and displays the login screen.
+
+Qt Designer File:
+- File Name: loginscreen.ui
+- Description: Defines the layout and widgets for the login screen.
+- Widgets:
+  - QLabel for "Username:"
+  - QLineEdit for entering the username (object name: usernameEdit)
+  - QLabel for "Password:"
+  - QLineEdit for entering the password (object name: passwordEdit, echoMode set to Password)
+  - QPushButton for "Login" (object name: loginButton)
+  - QPushButton for "Register" (object name: registerButton)
+
+Interconnections:
+- LoginScreen connects the loginButton and registerButton to the onLoginClicked() and onRegisterClicked() slots, respectively.
+- Encryption Functions are used in LoginScreen to encrypt and decrypt usernames and passwords before storing/retrieving data from the text file.
+- User and SuperUser classes are used to represent and manage user data.

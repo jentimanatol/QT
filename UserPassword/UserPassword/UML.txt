@@ -1,0 +1,113 @@
+@startuml
+skinparam shadowing false
+
+package "com.example.UserPassword" {
+    class User {
+        + User(username: std::string, password: std::string)
+        + getUsername(): std::string
+        + getPassword(): std::string
+    }
+
+    class SuperUser {
+        + SuperUser(username: std::string, password: std::string)
+    }
+
+    class LoginScreen {
+        + LoginScreen(parent: QWidget)
+        + ~LoginScreen()
+        + onLoginClicked()
+        + onRegisterClicked()
+    }
+
+    class Encryption {
+        + encrypt(str: std::string): std::string
+        + decrypt(str: std::string): std::string
+    }
+
+    class main.cpp {
+        + main(argc: int, argv: char*[]): int
+    }
+
+    class loginscreen.ui {
+        + QLabel usernameLabel
+        + QLineEdit usernameEdit
+        + QLabel passwordLabel
+        + QLineEdit passwordEdit
+        + QPushButton loginButton
+        + QPushButton registerButton
+    }
+
+    class loginscreen.h {
+        + LoginScreen(parent: QWidget)
+        + ~LoginScreen()
+        + onLoginClicked()
+        + onRegisterClicked()
+    }
+
+    class loginscreen.cpp {
+        + LoginScreen(parent: QWidget)
+        + ~LoginScreen()
+        + onLoginClicked()
+        + onRegisterClicked()
+    }
+
+    class user.h {
+        + User(username: std::string, password: std::string)
+        + getUsername(): std::string
+        + getPassword(): std::string
+    }
+
+    class user.cpp {
+        + User(username: std::string, password: std::string)
+        + getUsername(): std::string
+        + getPassword(): std::string
+    }
+
+    class superuser.h {
+        + SuperUser(username: std::string, password: std::string)
+    }
+
+    class superuser.cpp {
+        + SuperUser(username: std::string, password: std::string)
+    }
+
+    class encryption.h {
+        + encrypt(str: std::string): std::string
+        + decrypt(str: std::string): std::string
+    }
+
+    class encryption.cpp {
+        + encrypt(str: std::string): std::string
+        + decrypt(str: std::string): std::string
+    }
+}
+
+LoginScreen --> QLabel : uses
+LoginScreen --> QLineEdit : uses
+LoginScreen --> QPushButton : uses
+LoginScreen --> User : uses
+LoginScreen --> SuperUser : uses
+LoginScreen --> Encryption : uses
+
+main.cpp --> LoginScreen : uses
+
+loginscreen.ui --> QLabel : usernameLabel
+loginscreen.ui --> QLineEdit : usernameEdit
+loginscreen.ui --> QLabel : passwordLabel
+loginscreen.ui --> QLineEdit : passwordEdit
+loginscreen.ui --> QPushButton : loginButton
+loginscreen.ui --> QPushButton : registerButton
+
+loginscreen.h --> LoginScreen : defines
+loginscreen.cpp --> LoginScreen : implements
+
+user.h --> User : defines
+user.cpp --> User : implements
+
+superuser.h --> SuperUser : defines
+superuser.cpp --> SuperUser : implements
+
+encryption.h --> Encryption : defines
+encryption.cpp --> Encryption : implements
+
+@enduml
