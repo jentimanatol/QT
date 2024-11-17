@@ -71,6 +71,10 @@ mainwindow.ui
 ![Search Result - Text Not Found](https://github.com/jentimanatol/QT/blob/main/TextFinder/AnatolieTextFinder/SearchResultTextFound.jpg) 
  
 ## UML Diagram 
+
+![UML Diagram](https://github.com/jentimanatol/QT/blob/main/TextFinder/AnatolieTextFinder/Untitled%20Diagram.jpg) 
+
+
 \```plantuml 
 @startuml 
 class MainWindow { 
