@@ -67,3 +67,35 @@ mainwindow.ui
  
 ## Screenshots 
 ![Main Window](https://github.com/jentimanatol/QT/blob/main/TextFinder/AnatolieTextFinder/mainWindow.jpg) 
+![Search Result - Text Found](https://github.com/jentimanatol/QT/blob/main/TextFinder/AnatolieTextFinder/SearchResultTextFound.jpg) 
+![Search Result - Text Not Found](https://github.com/jentimanatol/QT/blob/main/TextFinder/AnatolieTextFinder/SearchResultTextFound.jpg) 
+ 
+## UML Diagram 
+\```plantuml 
+@startuml 
+class MainWindow { 
+- Ui::MainWindow *ui 
++ MainWindow(QWidget *parent = nullptr) 
++ ~MainWindow() 
++ void on_findButton_clicked() 
+} 
+ 
+class Ui_MainWindow { 
+- QTextEdit *textEdit 
+- QLineEdit *lineEdit 
+- QPushButton *findButton 
+} 
+ 
+MainWindow "1" *-- "1" Ui_MainWindow : uses 
+@enduml 
+\``` 
+ 
+## License 
+This project is licensed under the MIT License - see the LICENSE file for details. 
+ 
+## Acknowledgements 
+- Qt for providing the framework for GUI development. 
+- The authors of the C++ libraries used in this project. 
+ 
+## Contact 
+If you have any questions or suggestions, feel free to contact me at [your-email@example.com](mailto:your-email@example.com). 
