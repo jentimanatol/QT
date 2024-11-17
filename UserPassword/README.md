@@ -69,7 +69,7 @@ loginscreen.ui
 ## How to Run the Project 
 1. **Clone the Repository:** 
   \```sh 
-  git clone https://github.com/yourusername/UserPassword.git 
+  git clone https://github.com/jentimanatol/QT/tree/main/UserPassword/UserPassword 
   cd UserPassword 
   \``` 
  
@@ -86,8 +86,14 @@ loginscreen.ui
 - **Encryption:** Simple encryption and decryption methods are used to secure user data. 
  
 ## Screenshots 
-![Login Screen](screenshots/login_screen.png) 
-![Registration Screen](screenshots/registration_screen.png) 
+![Login Screen](https://github.com/jentimanatol/QT/blob/main/UserPassword/UserPassword/LoginScreen.jpg) 
+![Registration Screen](https://github.com/jentimanatol/QT/blob/main/UserPassword/UserPassword/Register.jpg) 
+ 
+## Diagrams 
+### Project Structure 
+![Project Structure](https://github.com/jentimanatol/QT/blob/main/UserPassword/UserPassword/Project%20Structure.txt) 
+### UML Diagram 
+![UML Diagram](https://github.com/jentimanatol/QT/blob/main/UserPassword/UserPassword/Untitled%20Diagram.drawio.png) 
  
 ## License 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. 
