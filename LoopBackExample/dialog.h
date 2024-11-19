@@ -4,30 +4,40 @@
 #include <QDialog>
 #include <QTcpServer>
 #include <QTcpSocket>
+#include <QPushButton>
+#include <QLabel>
+#include <QProgressBar>
+#include <QMessageBox>
 
-QT_BEGIN_NAMESPACE
-namespace Ui { class Dialog; }
-QT_END_NAMESPACE
+namespace Ui {
+class Dialog;
+}
 
 class Dialog : public QDialog
 {
     Q_OBJECT
 
 public:
-    Dialog(QWidget *parent = nullptr);
+    explicit Dialog(QWidget *parent = nullptr);
     ~Dialog();
 
-private slots:
-    void startServer();
-    void connectToServer();
+public slots:
+    void startListening();
+    void requestConnection();
     void acceptConnection();
-    void startRead();
+    void clientSendMessageToServer();
+    void updateServerProgress();
+    void updateClientProgress(qint64 numBytes);
+    void displayError(QAbstractSocket::SocketError socketError);
 
 private:
     Ui::Dialog *ui;
-    QTcpServer *tcpServer;
-    QTcpSocket *tcpSocket;
-    QTcpSocket *clientSocket;
+    QTcpServer tcpServer;
+    QTcpSocket tcpClient;
+    QTcpSocket *tcpServerConnection;
+    int bytesToWrite;
+    int bytesWritten;
+    int bytesReceived;
 };
 
 #endif // DIALOG_H
