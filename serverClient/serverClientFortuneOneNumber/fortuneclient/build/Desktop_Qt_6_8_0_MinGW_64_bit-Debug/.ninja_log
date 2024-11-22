@@ -1,0 +1,9 @@
+# ninja log v6
+15	1316	7538414868438678	fortuneclient_autogen/timestamp	76e47c4a492bd178
+15	1316	7538414868438678	fortuneclient_autogen/mocs_compilation.cpp	76e47c4a492bd178
+15	1316	7538414868438678	C:/Qt/Examples/Qt-6.8.0/network/fortuneclient/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/fortuneclient_autogen/timestamp	76e47c4a492bd178
+15	1316	7538414868438678	C:/Qt/Examples/Qt-6.8.0/network/fortuneclient/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/fortuneclient_autogen/mocs_compilation.cpp	76e47c4a492bd178
+1325	6094	7538414869782379	CMakeFiles/fortuneclient.dir/fortuneclient_autogen/mocs_compilation.cpp.obj	79dedd0b60c398bf
+1336	6129	7538414869892402	CMakeFiles/fortuneclient.dir/main.cpp.obj	330251094b3f0a0f
+1331	15030	7538414869782379	CMakeFiles/fortuneclient.dir/client.cpp.obj	42fb60db8812b60d
+15038	15760	7538415006938201	fortuneclient.exe	513ee4d49a636c3a

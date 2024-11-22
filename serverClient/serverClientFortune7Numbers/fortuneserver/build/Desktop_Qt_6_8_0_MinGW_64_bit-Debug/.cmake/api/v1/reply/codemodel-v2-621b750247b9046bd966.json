@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-38e51bad3a992bb6fc34.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "fortuneserver",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "fortuneserver::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-fortuneserver-Debug-384428720eb7b31515e4.json",
+					"name" : "fortuneserver",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "fortuneserver_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-fortuneserver_autogen-Debug-9190e1a7bbca40307d89.json",
+					"name" : "fortuneserver_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "fortuneserver_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-fortuneserver_autogen_timestamp_deps-Debug-9bf612b5c9993a12338f.json",
+					"name" : "fortuneserver_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Qt/Examples/Qt-6.8.0/network/fortuneserver/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug",
+		"source" : "C:/Qt/Examples/Qt-6.8.0/network/fortuneserver"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

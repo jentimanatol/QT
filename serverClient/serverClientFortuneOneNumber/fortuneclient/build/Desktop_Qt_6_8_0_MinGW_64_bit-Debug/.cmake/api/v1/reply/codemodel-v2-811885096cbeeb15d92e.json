@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-698146d159e5b4ee09dd.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "fortuneclient",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "fortuneclient::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-fortuneclient-Debug-251a0614d388070eb91a.json",
+					"name" : "fortuneclient",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "fortuneclient_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-fortuneclient_autogen-Debug-c1e5f0a23161b771a917.json",
+					"name" : "fortuneclient_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "fortuneclient_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-fortuneclient_autogen_timestamp_deps-Debug-017e3493bac6a76943e3.json",
+					"name" : "fortuneclient_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Qt/Examples/Qt-6.8.0/network/fortuneclient/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug",
+		"source" : "C:/Qt/Examples/Qt-6.8.0/network/fortuneclient"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}
