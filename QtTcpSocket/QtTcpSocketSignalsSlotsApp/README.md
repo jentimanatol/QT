@@ -45,14 +45,14 @@ mytcpclient.h
 - **Data Reading:** Reads and displays the response from the host. 
  
 ## Screenshots 
-![Application Output](https://github.com/jentimanatol/QT/blob/main/QtTcpSocketSignalsSlotsApp/QtTcpSocketSignalsSlotsApp/ApplicationOutput.jpg) 
+![Application Output](./QtTcpSocketSignalsSlotsApp/ApplicationOutput.jpg) 
  
 ## Diagrams 
 ### Project Structure Diagram 
-![Project Structure Diagram](https://github.com/jentimanatol/QT/blob/main/QtTcpSocketSignalsSlotsApp/QtTcpSocketSignalsSlotsApp/Untitled%20Diagram.drawio.png) 
+![Project Structure Diagram](./QtTcpSocketSignalsSlotsApp/Untitled%20Diagram.drawio.png) 
  
 ### UML Diagram 
-![UML Diagram](https://github.com/jentimanatol/QT/blob/main/QtTcpSocketSignalsSlotsApp/QtTcpSocketSignalsSlotsApp/UMLDiagram.txt) 
+![UML Diagram](./QtTcpSocketSignalsSlotsApp/UMLDiagram.txt) 
  
 ## License 
 This project is licensed under the MIT License - see the LICENSE file for details. 
@@ -62,4 +62,3 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - The authors of the C++ libraries used in this project. 
  
 ## Contact 
-If you have any questions or suggestions, feel free to contact me at [your-email@example.com](mailto:your-email@example.com). 
