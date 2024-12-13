@@ -36,14 +36,14 @@ main.cpp
 - **Data Reading:** Reads and displays the response from the host. 
  
 ## Screenshots 
-![Application Output](https://github.com/jentimanatol/QT/blob/main/QtTcpSocketApp/QtTcpSocketApp/AplicationOutput.jpg) 
+![Application Output](./QtTcpSocketApp/AplicationOutput.jpg) 
  
 ## Diagrams 
 ### Project Structure Diagram 
-![Project Structure Diagram](https://github.com/jentimanatol/QT/blob/main/QtTcpSocketApp/QtTcpSocketApp/Untitled%20Diagram.drawio.png) 
+![Project Structure Diagram](./QtTcpSocketApp/Untitled%20Diagram.drawio.png) 
  
 ### UML Diagram 
-![UML Diagram](https://github.com/jentimanatol/QT/blob/main/QtTcpSocketApp/QtTcpSocketApp/UMLDiagram.txt) 
+![UML Diagram](./QtTcpSocketApp/UMLDiagram.txt) 
  
 ## License 
 This project is licensed under the MIT License - see the LICENSE file for details. 
