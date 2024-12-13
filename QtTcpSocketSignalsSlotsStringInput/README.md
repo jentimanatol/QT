@@ -46,18 +46,18 @@ mytcpclient.h
 - **Dynamic Host Connection:** Allows for flexible and dynamic host connections by taking a string as an input parameter. 
  
 ## Screenshots 
-![Application Output HTML](https://github.com/jentimanatol/QT/blob/main/QtTcpSocketSignalsSlotsStringInput/QtTcpSocketSignalsSlotsStringInput/AplicationOutputhtml.jpg) 
-![Application Output](https://github.com/jentimanatol/QT/blob/main/QtTcpSocketSignalsSlotsStringInput/QtTcpSocketSignalsSlotsStringInput/AplicationOutput.jpg) 
+![Application Output HTML](./QtTcpSocketSignalsSlotsStringInput/AplicationOutputhtml.jpg) 
+![Application Output](./QtTcpSocketSignalsSlotsStringInput/AplicationOutput.jpg) 
  
 ## Diagrams 
 ### Project Structure Diagram 
-![Project Structure Diagram](https://github.com/jentimanatol/QT/blob/main/QtTcpSocketSignalsSlotsStringInput/QtTcpSocketSignalsSlotsStringInput/Untitled%20Diagram.drawio.png) 
+![Project Structure Diagram](./QtTcpSocketSignalsSlotsStringInput/Untitled%20Diagram.drawio.png) 
  
 ### UML Diagram 
-![UML Diagram](https://github.com/jentimanatol/QT/blob/main/QtTcpSocketSignalsSlotsStringInput/QtTcpSocketSignalsSlotsStringInput/UMLDiagram.txt) 
+![UML Diagram](./QtTcpSocketSignalsSlotsStringInput/UMLDiagram.txt) 
  
 ### Detailed Diagram 
-![Detailed Diagram](https://github.com/jentimanatol/QT/blob/main/QtTcpSocketSignalsSlotsStringInput/QtTcpSocketSignalsSlotsStringInput/Untitled%20Diagram.drawio) 
+![Detailed Diagram](./QtTcpSocketSignalsSlotsStringInput/Untitled%20Diagram.drawio) 
  
 ## License 
 This project is licensed under the MIT License - see the LICENSE file for details. 
@@ -67,4 +67,3 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - The authors of the C++ libraries used in this project. 
  
 ## Contact 
-If you have any questions or suggestions, feel free to contact me at [your-email@example.com](mailto:your-email@example.com). 
