@@ -1,0 +1,5 @@
+Adding networking to budgeting software can lead to a whole new world of features and enhancements that improve user experience and functionality exponentially. For example, one major benefit would be storing user data on a server, which enables logging in from any device and keeping personal budgets accessible regardless of location.
+
+Moreover, online spreadsheets hosted on websites like Google Docs or Excel enable users to keep their financial data from any location. This enhances not only convenience but also data security and accessibility.
+
+Another interesting concept is the automatic update of financial information; examples are fuel prices or tax rates, which could be linked, through the software, with some external databases that allow it to be kept constantly updated with minimum maintenance so that the user gets complete and updated information.
