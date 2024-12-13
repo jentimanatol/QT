@@ -1,7 +1,7 @@
 # QtTcpSocket Signals and Slots Application
 
 ## Overview
-This repository contains the solution for the **Topic 8 Reading Assignment** from the course *2024FA CSC-284-WB*. The project involves working with the Qt framework to create a TCP socket console application and progressively enhancing it to utilize signals and slots, demonstrating key Qt functionalities.
+This repository contains the solution for the **Topic 8 Reading Assignment** from the course *CSC-284*. The project involves working with the Qt framework to create a TCP socket console application and progressively enhancing it to utilize signals and slots, demonstrating key Qt functionalities.
 
 ---
 
@@ -91,5 +91,10 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 ---
 
 ## Acknowledgments
-- Course resources and guidance provided by *2024FA CSC-284-WB*.
+- Course resources and guidance provided by *CSC-284*.
 - Qt documentation and examples for TCP socket and signals/slots implementation.
+
+
+
+_Not protected by copyright, may be used for its intended purpose._  
+_Author: Anatolie Jentimir._
