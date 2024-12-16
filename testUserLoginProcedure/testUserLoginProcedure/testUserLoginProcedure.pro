@@ -8,12 +8,15 @@ TEMPLATE = app
 SOURCES += main.cpp \
            mainwindow.cpp \
            incomeentry.cpp \
-           expenseentry.cpp
+           expenseentry.cpp \
+           totalbalance.cpp
 
 HEADERS += mainwindow.h \
            incomeentry.h \
-           expenseentry.h
+           expenseentry.h \
+           totalbalance.h
 
 FORMS += mainwindow.ui \
          incomeentry.ui \
-         expenseentry.ui
+         expenseentry.ui \
+         totalbalance.ui

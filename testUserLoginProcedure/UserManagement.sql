@@ -1,5 +1,13 @@
+#Readme 
 #Run the code in the SQL enviroment 
-# Shange the  root Loginand  Pass in the QT enviroment 
+# Change the  root Loginand  Pass in the QT enviroment file mainwindow.cpp
+#   db.setHostName("localhost");
+ #   db.setDatabaseName("usermanagement");
+ #   db.setUserName("root");
+ #   db.setPassword("admin");
+#     db.setPort(3306);
+#-----------------------------
+#install mysql-connector-c++-9.1.0-winx64.msi or  mysql-connector-c-6.1.11-winx64.msi if have connection problem 
 CREATE DATABASE UserManagement;
 USE UserManagement;
 CREATE TABLE User (
