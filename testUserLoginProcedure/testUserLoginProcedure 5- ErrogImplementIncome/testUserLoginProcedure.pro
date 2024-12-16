@@ -9,17 +9,14 @@ SOURCES += main.cpp \
            mainwindow.cpp \
            incomeentry.cpp \
            expenseentry.cpp \
-           totalbalance.cpp \
-           welcome.cpp
+           totalbalance.cpp
 
 HEADERS += mainwindow.h \
            incomeentry.h \
            expenseentry.h \
-           totalbalance.h \
-           welcome.h
+           totalbalance.h
 
 FORMS += mainwindow.ui \
          incomeentry.ui \
          expenseentry.ui \
-         totalbalance.ui \
-         welcome.ui
+         totalbalance.ui

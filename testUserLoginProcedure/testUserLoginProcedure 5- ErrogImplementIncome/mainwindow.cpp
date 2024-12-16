@@ -2,7 +2,6 @@
 #include "ui_mainwindow.h"
 #include "incomeentry.h"  // Include the header for IncomeEntry
 #include "expenseentry.h" // Include the header for ExpenseEntry
-#include "totalbalance.h" // Include the header for TotalBalance
 #include <QSqlDatabase>
 #include <QSqlQuery>
 #include <QMessageBox>
@@ -27,11 +26,6 @@ MainWindow::MainWindow(QWidget *parent)
 
     // Connect the forgot password button to the forgot password procedure execution
     connect(ui->forgotPasswordButton, &QPushButton::clicked, this, &MainWindow::onForgotPasswordButtonClicked);
-
-    // Connect buttons on the welcome page to their respective slots
-    connect(ui->incomeEntryButton, &QPushButton::clicked, this, &MainWindow::onIncomeEntryButtonClicked);
-    connect(ui->expenseEntryButton, &QPushButton::clicked, this, &MainWindow::onExpenseEntryButtonClicked);
-    connect(ui->totalBalanceButton, &QPushButton::clicked, this, &MainWindow::onTotalBalanceButtonClicked);
 }
 
 // MainWindow destructor
@@ -85,19 +79,20 @@ void MainWindow::executeLoginProcedure(const QString &username, const QString &p
         ui->stackedWidget->setCurrentWidget(ui->welcomePage);
         ui->welcomeLabel->setText("Welcome, " + username + "!");
 
-        // Set userID for IncomeEntry and ExpenseEntry windows
-        IncomeEntry *incomeEntryWindow = new IncomeEntry();
-        incomeEntryWindow->setUserID(userID);
+        // Create buttons for Income Entry and Expense Entry
+        QPushButton *incomeEntryButton = new QPushButton("Income Entry", this);
+        QPushButton *expenseEntryButton = new QPushButton("Expense Entry", this);
 
-        ExpenseEntry *expenseEntryWindow = new ExpenseEntry();
-        expenseEntryWindow->setUserID(userID);
+        // Connect the new buttons to their respective slots
+        connect(incomeEntryButton, &QPushButton::clicked, this, &MainWindow::onIncomeEntryButtonClicked);
+        connect(expenseEntryButton, &QPushButton::clicked, this, &MainWindow::onExpenseEntryButtonClicked);
 
-        TotalBalance *totalBalanceWindow = new TotalBalance();
-
-        // Connect the buttons to their respective windows
-        connect(ui->incomeEntryButton, &QPushButton::clicked, incomeEntryWindow, &QWidget::show);
-        connect(ui->expenseEntryButton, &QPushButton::clicked, expenseEntryWindow, &QWidget::show);
-        connect(ui->totalBalanceButton, &QPushButton::clicked, totalBalanceWindow, &QWidget::show);
+        // Add the buttons to the layout of the welcomePage
+        QVBoxLayout *layout = dynamic_cast<QVBoxLayout*>(ui->welcomePage->layout());
+        if (layout) {
+            layout->addWidget(incomeEntryButton);
+            layout->addWidget(expenseEntryButton);
+        }
     } else {
         QMessageBox::warning(this, "Login Failed", "Invalid username or password.");
     }
@@ -109,7 +104,7 @@ void MainWindow::executeRegisterProcedure(const QString &firstName, const QStrin
 
     query.prepare("CALL RegisterUser(:firstName, :lastName, :username, :password, :position, @userID)");
     query.bindValue(":firstName", firstName);
-    query.bindValue(":lastName, lastName);
+    query.bindValue(":lastName", lastName);
     query.bindValue(":username", username);
     query.bindValue(":password", password);
     query.bindValue(":position", position);
@@ -128,11 +123,8 @@ void MainWindow::executeRegisterProcedure(const QString &firstName, const QStrin
 
     if (query.next()) {
         int userID = query.value(0).toInt();
-        qDebug() << "New user ID:" << userID;
-
-        QMessageBox::information(this, "Registration Successful", "User registered successfully!");
-    } else {
-        QMessageBox::warning(this, "Registration Failed", "Failed to register the user.");
+        qDebug() << "New User ID:" << userID;
+        QMessageBox::information(this, "Registration Successful", "User registered successfully!\nUser ID: " + QString::number(userID));
     }
 }
 
@@ -150,46 +142,43 @@ void MainWindow::executeForgotPasswordProcedure(const QString &username, const Q
         return;
     }
 
-    QMessageBox::information(this, "Password Reset", "Password reset successfully!");
+    QMessageBox::information(this, "Password Reset Successful", "Password has been reset successfully!");
 }
 
-// Slots implementation
+// Slot function for handling login button click
 void MainWindow::onLoginButtonClicked() {
     QString username = ui->usernameLineEdit->text();
     QString password = ui->passwordLineEdit->text();
-
     executeLoginProcedure(username, password);
 }
 
+// Slot function for handling register button click
 void MainWindow::onRegisterButtonClicked() {
     QString firstName = ui->firstNameLineEdit->text();
     QString lastName = ui->lastNameLineEdit->text();
     QString username = ui->registerUsernameLineEdit->text();
     QString password = ui->registerPasswordLineEdit->text();
     QString position = ui->positionComboBox->currentText();
-
     executeRegisterProcedure(firstName, lastName, username, password, position);
 }
 
+// Slot function for handling forgot password button click
 void MainWindow::onForgotPasswordButtonClicked() {
-    QString username = QInputDialog::getText(this, "Forgot Password", "Enter your username:");
-    QString newPassword = QInputDialog::getText(this, "Forgot Password", "Enter your new password:", QLineEdit::Password);
-
-    executeForgotPasswordProcedure(username, newPassword);
+    QString username = ui->usernameLineEdit->text();
+    QString newPassword = QInputDialog::getText(this, "Reset Password", "Enter new password:", QLineEdit::Password);
+    if (!newPassword.isEmpty()) {
+        executeForgotPasswordProcedure(username, newPassword);
+    }
 }
 
-// Slots for budget management features
+// Slot function for handling income entry button click
 void MainWindow::onIncomeEntryButtonClicked() {
     IncomeEntry *incomeEntryWindow = new IncomeEntry();
     incomeEntryWindow->show();
 }
 
+// Slot function for handling expense entry button click
 void MainWindow::onExpenseEntryButtonClicked() {
     ExpenseEntry *expenseEntryWindow = new ExpenseEntry();
     expenseEntryWindow->show();
-}
-
-void MainWindow::onTotalBalanceButtonClicked() {
-    TotalBalance *totalBalanceWindow = new TotalBalance();
-    totalBalanceWindow->show();
 }

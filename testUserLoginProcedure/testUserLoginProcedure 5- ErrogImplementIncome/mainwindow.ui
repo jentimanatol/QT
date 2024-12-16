@@ -139,27 +139,6 @@
           </property>
          </widget>
         </item>
-        <item>
-         <widget class="QPushButton" name="incomeEntryButton">
-          <property name="text">
-           <string>Income Entry</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="expenseEntryButton">
-          <property name="text">
-           <string>Expense Entry</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="totalBalanceButton">
-          <property name="text">
-           <string>Total Balance</string>
-          </property>
-         </widget>
-        </item>
        </layout>
       </widget>
      </widget>
