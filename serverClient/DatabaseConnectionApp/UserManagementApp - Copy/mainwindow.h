@@ -2,7 +2,12 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QSqlTableModel>
 #include <QSqlDatabase>
+#include <QPushButton>
+#include <QSqlQuery>
+#include <QMessageBox>
+#include <QDebug>
 
 namespace Ui {
 class MainWindow;
@@ -17,14 +22,11 @@ public:
     ~MainWindow();
 
 private slots:
-    void showRegisterForm();
-    void showLoginForm();
-    void loginUser();
-    void registerUser();
+    void loadData();  // Declare the loadData function here
 
 private:
     Ui::MainWindow *ui;
-    QSqlDatabase db;
+    QSqlTableModel *model;  // Declare model here
 };
 
 #endif // MAINWINDOW_H
