@@ -1,30 +1,24 @@
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
-
-#include <QMainWindow>
+#include "mainwindow.h"
+#include "ui_mainwindow.h"
 #include <QSqlDatabase>
+#include <QMessageBox>
 
-namespace Ui {
-class MainWindow;
+MainWindow::MainWindow(QWidget *parent)
+    : QMainWindow(parent), ui(new Ui::MainWindow)
+{
+    ui->setupUi(this);
+
+    // Initialize the database connection
+    db = QSqlDatabase::addDatabase("QSQLITE");  // Example for SQLite
+    db.setDatabaseName("path_to_database.db");
+
+    if (!db.open()) {
+        QMessageBox::critical(this, "Database Error", "Unable to open database.");
+    }
 }
 
-class MainWindow : public QMainWindow
+MainWindow::~MainWindow()
 {
-    Q_OBJECT
-
-public:
-    explicit MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
-
-private slots:
-    void showRegisterForm();
-    void showLoginForm();
-    void loginUser();
-    void registerUser();
-
-private:
-    Ui::MainWindow *ui;
-    QSqlDatabase db;
-};
-
-#endif // MAINWINDOW_H
+    delete ui;
+    db.close();  // Don't forget to close the database connection
+}

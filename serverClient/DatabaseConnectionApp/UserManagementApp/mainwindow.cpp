@@ -68,6 +68,23 @@ void MainWindow::registerUser()
     QString password = ui->registerPasswordLineEdit->text();
     QString position = ui->positionComboBox->currentText();
 
+
+
+    /*
+connect(ui->loginButton, &QPushButton::clicked, this, &MainWindow::loginUser);
+connect(ui->registerButton, &QPushButton::clicked, this, &MainWindow::showRegisterForm);
+connect(ui->forgotPasswordButton, &QPushButton::clicked, this, &MainWindow::forgotPassword);
+connect(ui->registerUserButton, &QPushButton::clicked, this, &MainWindow::registerUser);
+*/
+
+
+
+
+
+
+
+
+
     // Insert into User table
     QSqlQuery query;
     query.prepare("INSERT INTO User (firstName, lastName, position) VALUES (:firstName, :lastName, :position)");

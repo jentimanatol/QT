@@ -4,6 +4,7 @@
         <widget class="QWidget" name="centralwidget">
             <layout class="QVBoxLayout">
                 <widget class="QStackedWidget" name="stackedWidget">
+                    <!-- Login Page -->
                     <widget class="QWidget" name="loginPage">
                         <layout class="QVBoxLayout">
                             <widget class="QLineEdit" name="usernameLineEdit" placeholderText="Username"/>
@@ -14,6 +15,7 @@
                         </layout>
                     </widget>
 
+                    <!-- Register Page -->
                     <widget class="QWidget" name="registerPage">
                         <layout class="QVBoxLayout">
                             <widget class="QLineEdit" name="firstNameLineEdit" placeholderText="First Name"/>
