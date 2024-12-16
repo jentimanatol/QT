@@ -14,63 +14,66 @@
    <string>User Registration</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <widget class="QLineEdit" name="firstNameLineEdit">
-      <property name="placeholderText">
-       <string>First Name</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="lastNameLineEdit">
-      <property name="placeholderText">
-       <string>Last Name</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="registerUsernameLineEdit">
-      <property name="placeholderText">
-       <string>Username</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="registerPasswordLineEdit">
-      <property name="placeholderText">
-       <string>Password</string>
-      </property>
-      <property name="echoMode">
-       <enum>QLineEdit::Password</enum>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QComboBox" name="positionComboBox">
-      <item>
-       <property name="text">
-        <string>Admin</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>User</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Developer</string>
-       </property>
-      </item>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="registerUserButton">
+   <item>
+    <widget class="QLineEdit" name="firstNameLineEdit">
+     <property name="placeholderText">
+      <string>First Name</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLineEdit" name="lastNameLineEdit">
+     <property name="placeholderText">
+      <string>Last Name</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLineEdit" name="registerUsernameLineEdit">
+     <property name="placeholderText">
+      <string>Username</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLineEdit" name="registerPasswordLineEdit">
+     <property name="echoMode">
+      <enum>QLineEdit::EchoMode::Password</enum>
+     </property>
+     <property name="placeholderText">
+      <string>Password</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QComboBox" name="positionComboBox">
+     <property name="currentText">
+      <string notr="true">Admin</string>
+     </property>
+     <item>
       <property name="text">
-       <string>Register</string>
+       <string>Admin</string>
       </property>
-     </widget>
-    </item>
+     </item>
+     <item>
+      <property name="text">
+       <string>User</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Developer</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="registerUserButton">
+     <property name="text">
+      <string>Register</string>
+     </property>
+    </widget>
+   </item>
   </layout>
  </widget>
  <resources/>

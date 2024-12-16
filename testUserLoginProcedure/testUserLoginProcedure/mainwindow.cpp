@@ -1,5 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "userforgotpass.h"
+#include "userregister.h"
 #include <QSqlDatabase>
 #include <QSqlQuery>
 #include <QMessageBox>
@@ -16,6 +18,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     // Connect the login button to the login procedure execution
     connect(ui->loginButton, &QPushButton::clicked, this, &MainWindow::onLoginButtonClicked);
+    connect(ui->forgotPasswordButton, &QPushButton::clicked, this, &MainWindow::onForgotPasswordButtonClicked);
+    connect(ui->registerButton, &QPushButton::clicked, this, &MainWindow::onRegisterButtonClicked);
 }
 
 // MainWindow destructor
@@ -42,11 +46,11 @@ void MainWindow::connectToDatabase()
 }
 
 // Function to execute the login procedure
-void MainWindow::executeLoginProcedure(const QString &username, const QString &password) {
+void MainWindow::executeLoginProcedure(const QString &email, const QString &password) {
     QSqlQuery query;
 
-    query.prepare("CALL UserLoginProcedure(:username, :password, @accessLevel, @userID)");
-    query.bindValue(":username", username);
+    query.prepare("CALL UserLoginProcedure(:email, :password, @userID)");
+    query.bindValue(":email", email);
     query.bindValue(":password", password);
 
     if (!query.exec()) {
@@ -55,28 +59,39 @@ void MainWindow::executeLoginProcedure(const QString &username, const QString &p
         return;
     }
 
-    if (!query.exec("SELECT @accessLevel, @userID")) {
+    if (!query.exec("SELECT @userID")) {
         qDebug() << "Failed to retrieve output variables:" << query.lastError().text();
         QMessageBox::critical(this, "Output Retrieval Failed", query.lastError().text());
         return;
     }
 
     if (query.next()) {
-        int accessLevel = query.value(0).toInt();
-        int userID = query.value(1).toInt();
+        int userID = query.value(0).toInt();
 
-        qDebug() << "Access Level:" << accessLevel << "UserID:" << userID;
+        qDebug() << "UserID:" << userID;
         ui->stackedWidget->setCurrentWidget(ui->welcomePage);
-        ui->welcomeLabel->setText("Welcome, " + username + "!");
+        ui->welcomeLabel->setText("Welcome, user!");
     } else {
-        QMessageBox::warning(this, "Login Failed", "Invalid username or password.");
+        QMessageBox::warning(this, "Login Failed", "Invalid email or password.");
     }
 }
 
 // Slot for login button click
 void MainWindow::onLoginButtonClicked() {
-    QString username = ui->usernameLineEdit->text();
+    QString email = ui->emailLineEdit->text();
     QString password = ui->passwordLineEdit->text();
 
-    executeLoginProcedure(username, password);
+    executeLoginProcedure(email, password);
+}
+
+// Slot for forgot password button click
+void MainWindow::onForgotPasswordButtonClicked() {
+    UserForgotPass *forgotPassWindow = new UserForgotPass();
+    forgotPassWindow->show();
+}
+
+// Slot for register button click
+void MainWindow::onRegisterButtonClicked() {
+    UserRegister *registerWindow = new UserRegister();
+    registerWindow->show();
 }

@@ -16,158 +16,71 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QStackedWidget" name="stackedWidget">
-      <widget class="QWidget" name="loginPage">
-       <layout class="QVBoxLayout" name="verticalLayout_2">
-        <item>
-         <widget class="QLineEdit" name="usernameLineEdit">
-          <property name="placeholderText">
-           <string>Username</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="passwordLineEdit">
-          <property name="placeholderText">
-           <string>Password</string>
-          </property>
-          <property name="echoMode">
-           <enum>QLineEdit::Password</enum>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="loginButton">
-          <property name="text">
-           <string>Login</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="registerButton">
-          <property name="text">
-           <string>Register</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="forgotPasswordButton">
-          <property name="text">
-           <string>Forgot Password</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="registerPage">
-       <layout class="QVBoxLayout" name="verticalLayout_3">
-        <item>
-         <widget class="QLineEdit" name="firstNameLineEdit">
-          <property name="placeholderText">
-           <string>First Name</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="lastNameLineEdit">
-          <property name="placeholderText">
-           <string>Last Name</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="registerUsernameLineEdit">
-          <property name="placeholderText">
-           <string>Username</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="registerPasswordLineEdit">
-          <property name="placeholderText">
-           <string>Password</string>
-          </property>
-          <property name="echoMode">
-           <enum>QLineEdit::Password</enum>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QComboBox" name="positionComboBox">
-          <item>
-           <property name="text">
-            <string>Admin</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>User</string>
-           </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Developer</string>
-           </property>
-          </item>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="registerUserButton">
-          <property name="text">
-           <string>Register</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="backToLoginButton">
-          <property name="text">
-           <string>Back to Login</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="welcomePage">
-       <layout class="QVBoxLayout" name="verticalLayout_4">
-        <item>
-         <widget class="QLabel" name="welcomeLabel">
-          <property name="text">
-           <string>Welcome, User!</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="incomeEntryButton">
-          <property name="text">
-           <string>Income Entry</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="expenseEntryButton">
-          <property name="text">
-           <string>Expense Entry</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="totalBalanceButton">
-          <property name="text">
-           <string>Total Balance</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
+     <widget class="QLabel" name="emailLabel">
+      <property name="text">
+       <string>Email:</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="emailLineEdit"/>
+    </item>
+    <item>
+     <widget class="QLabel" name="passwordLabel">
+      <property name="text">
+       <string>Password:</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="passwordLineEdit">
+      <property name="echoMode">
+       <enum>QLineEdit::Password</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="loginButton">
+      <property name="text">
+       <string>Login</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="forgotPasswordButton">
+      <property name="text">
+       <string>Forgot Password</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="registerButton">
+      <property name="text">
+       <string>Register</string>
+      </property>
      </widget>
     </item>
    </layout>
   </widget>
-  <widget class="QMenuBar" name="menubar"/>
-  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QStackedWidget" name="stackedWidget">
+   <widget class="QWidget" name="loginPage">
+    <layout class="QVBoxLayout" name="verticalLayout_2"/>
+   </widget>
+   <widget class="QWidget" name="welcomePage">
+    <layout class="QVBoxLayout" name="verticalLayout_3">
+     <item>
+      <widget class="QLabel" name="welcomeLabel">
+       <property name="text">
+        <string>Welcome!</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar"/>
+  <widget class="QToolBar" name="mainToolBar"/>
+  <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <resources/>
  <connections/>

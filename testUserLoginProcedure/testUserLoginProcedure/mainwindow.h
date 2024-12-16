@@ -17,24 +17,13 @@ public:
 
 private slots:
     void onLoginButtonClicked();
-    void onRegisterButtonClicked();
     void onForgotPasswordButtonClicked();
-
-
-///Add for Buyget 
-   
-    void onIncomeEntryButtonClicked();
-    void onExpenseEntryButtonClicked();
-
-    void onTotalBalanceButtonClicked();
-
+    void onRegisterButtonClicked();
 
 private:
     Ui::MainWindow *ui;
     void connectToDatabase();
-    void executeLoginProcedure(const QString &username, const QString &password);
-    void executeRegisterProcedure(const QString &firstName, const QString &lastName, const QString &username, const QString &password, const QString &position);
-    void executeForgotPasswordProcedure(const QString &username, const QString &newPassword);
+    void executeLoginProcedure(const QString &email, const QString &password);
 };
 
 #endif // MAINWINDOW_H
