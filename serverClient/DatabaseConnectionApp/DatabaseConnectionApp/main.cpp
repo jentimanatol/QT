@@ -1,41 +1,44 @@
-#include <QApplication>
+#include <QCoreApplication>
 #include <QSqlDatabase>
 #include <QSqlError>
 #include <QSqlQuery>
 #include <QDebug>
 
-int main(int argc, char *argv[]) {
-    QApplication app(argc, argv);
+int main(int argc, char *argv[])
+{
+    QCoreApplication a(argc, argv);
 
-    // Add a MySQL database connection
+    // Setting up the connection
     QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
 
-    // Set connection parameters
+    // Set connection details
     db.setHostName("localhost");
     db.setPort(3306);
     db.setDatabaseName("usermanagement");
     db.setUserName("root");
     db.setPassword("admin");
 
-    // Open the database connection
+    // Set SSL options for secure connection
+    db.setConnectOptions("MYSQL_OPT_SSL_KEY=C:/path/to/client-key.pem;"
+                         "MYSQL_OPT_SSL_CERT=C:/path/to/client-cert.pem;"
+                         "MYSQL_OPT_SSL_CA=C:/path/to/ca-cert.pem;");
+
+    // Open the connection
     if (!db.open()) {
-        qDebug() << "Database connection failed!";
-        qDebug() << db.lastError().text();
-        return -1; // Exit application if connection fails
+        qDebug() << "Database connection failed:" << db.lastError().text();
+        return -1;
     }
 
-    qDebug() << "Database connection successful!";
+    qDebug() << "Successfully connected to the database!";
 
-    // Test a simple query
-    QSqlQuery query;
-    if (query.exec("SELECT * FROM user")) {
-        while (query.next()) {
-            QString username = query.value("username").toString(); // Replace 'username' with actual column name
-            qDebug() << "Username:" << username;
-        }
+    // Test the connection with a simple query
+    QSqlQuery query("SELECT COUNT(*) FROM User");
+    if (query.next()) {
+        int userCount = query.value(0).toInt();
+        qDebug() << "Number of users in the database:" << userCount;
     } else {
         qDebug() << "Query failed:" << query.lastError().text();
     }
 
-    return app.exec();
+    return a.exec();
 }
