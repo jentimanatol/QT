@@ -10,24 +10,16 @@ SOURCES += main.cpp \
            incomeentry.cpp \
            expenseentry.cpp \
            totalbalance.cpp \
-           userforgotpass.cpp \
-           userregister.cpp \
-           userregister.cpp \
            welcome.cpp
 
 HEADERS += mainwindow.h \
            incomeentry.h \
            expenseentry.h \
            totalbalance.h \
-           userforgotpass.h \
-           userregister.h \
            welcome.h
 
 FORMS += mainwindow.ui \
          incomeentry.ui \
          expenseentry.ui \
          totalbalance.ui \
-         welcome.ui \
-         userforgotpass.ui \
-         userregister.ui
-
+         welcome.ui
