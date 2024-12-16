@@ -1,0 +1,38 @@
+<ui version="4.0">
+    <class>MainWindow</class>
+    <widget class="QMainWindow" name="MainWindow">
+        <widget class="QWidget" name="centralwidget">
+            <layout class="QVBoxLayout">
+                <widget class="QStackedWidget" name="stackedWidget">
+                    <!-- Login Page -->
+                    <widget class="QWidget" name="loginPage">
+                        <layout class="QVBoxLayout">
+                            <widget class="QLineEdit" name="usernameLineEdit" placeholderText="Username"/>
+                            <widget class="QLineEdit" name="passwordLineEdit" placeholderText="Password" echoMode="Password"/>
+                            <widget class="QPushButton" name="loginButton" text="Login"/>
+                            <widget class="QPushButton" name="registerButton" text="Register"/>
+                            <widget class="QPushButton" name="forgotPasswordButton" text="Forgot Password"/>
+                        </layout>
+                    </widget>
+
+                    <!-- Register Page -->
+                    <widget class="QWidget" name="registerPage">
+                        <layout class="QVBoxLayout">
+                            <widget class="QLineEdit" name="firstNameLineEdit" placeholderText="First Name"/>
+                            <widget class="QLineEdit" name="lastNameLineEdit" placeholderText="Last Name"/>
+                            <widget class="QLineEdit" name="registerUsernameLineEdit" placeholderText="Username"/>
+                            <widget class="QLineEdit" name="registerPasswordLineEdit" placeholderText="Password" echoMode="Password"/>
+                            <widget class="QComboBox" name="positionComboBox">
+                                <item text="Admin"/>
+                                <item text="User"/>
+                                <item text="Developer"/>
+                            </widget>
+                            <widget class="QPushButton" name="registerUserButton" text="Register"/>
+                            <widget class="QPushButton" name="backToLoginButton" text="Back to Login"/>
+                        </layout>
+                    </widget>
+                </widget>
+            </layout>
+        </widget>
+    </widget>
+</ui>
