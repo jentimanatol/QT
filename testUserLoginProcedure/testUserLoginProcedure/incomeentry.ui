@@ -15,9 +15,9 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QLineEdit" name="sourceLineEdit">
+     <widget class="QComboBox" name="sourceComboBox">
       <property name="placeholderText">
-       <string>Source</string>
+       <string>Select Source</string>
       </property>
      </widget>
     </item>

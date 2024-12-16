@@ -26,6 +26,8 @@ private slots:
     void onIncomeEntryButtonClicked();
     void onExpenseEntryButtonClicked();
 
+    void onTotalBalanceButtonClicked();
+
 
 private:
     Ui::MainWindow *ui;

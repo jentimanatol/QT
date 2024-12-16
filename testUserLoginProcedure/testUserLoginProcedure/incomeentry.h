@@ -2,6 +2,7 @@
 #define INCOMEENTRY_H
 
 #include <QWidget>
+#include <QSqlDatabase>
 
 namespace Ui {
 class IncomeEntry;
@@ -17,6 +18,8 @@ public:
 
 private:
     Ui::IncomeEntry *ui;
+    QSqlDatabase db;
+    void populateSources();
 };
 
 #endif // INCOMEENTRY_H
