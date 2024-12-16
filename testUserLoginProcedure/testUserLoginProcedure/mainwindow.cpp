@@ -1,3 +1,5 @@
+
+
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "incomeentry.h"  // Include the header for IncomeEntry
@@ -102,6 +104,20 @@ void MainWindow::executeLoginProcedure(const QString &username, const QString &p
         QMessageBox::warning(this, "Login Failed", "Invalid username or password.");
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Function to execute the registration procedure
 void MainWindow::executeRegisterProcedure(const QString &firstName, const QString &lastName, const QString &username, const QString &password, const QString &position) {
