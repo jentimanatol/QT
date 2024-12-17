@@ -1,12 +1,13 @@
-QT       += core gui sql
+QT += core gui widgets sql
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+CONFIG += c++11
 
-CONFIG += c++17
+# Add the MySQL Connector/C++ library path
+LIBS += -L"C:/Program Files/MySQL/MySQL Connector C++ 9.1/lib64/vs14" -lmysqlcppconn -lmysqlcppconnx
 
-# You can make your code fail to compile if it uses deprecated APIs.
-# In order to do so, uncomment the following line.
-#DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
+# Include directories for MySQL Connector/C++
+INCLUDEPATH += "C:/Program Files/MySQL/MySQL Connector C++ 9.1/include"
+INCLUDEPATH += "C:/Program Files/MySQL/MySQL Connector C++ 9.1/include/jdbc"
 
 SOURCES += \
     DatabaseManager.cpp \
@@ -34,8 +35,3 @@ FORMS += \
     MenuWindow.ui \
     TotalBalance.ui \
     widget.ui
-
-# Default rules for deployment.
-qnx: target.path = /tmp/$${TARGET}/bin
-else: unix:!android: target.path = /opt/$${TARGET}/bin
-!isEmpty(target.path): INSTALLS += target

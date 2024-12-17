@@ -3,6 +3,7 @@
 
 
 
+//#include <QWidget>
 #include <QApplication>
 #include "MenuWindow.h"
 #include "DatabaseManager.h"
