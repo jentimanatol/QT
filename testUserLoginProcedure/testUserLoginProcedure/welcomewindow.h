@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QString>
+#include "DatabaseManager.h" // Include DatabaseManager
 
 namespace Ui {
 class WelcomeWindow;

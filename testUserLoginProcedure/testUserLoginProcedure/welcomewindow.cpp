@@ -1,5 +1,6 @@
 #include "welcomewindow.h"
 #include "ui_welcomewindow.h"
+#include "DatabaseManager.h"
 #include <QMessageBox>
 #include <QDebug>
 
@@ -24,14 +25,14 @@ void WelcomeWindow::onLoginButtonClicked()
 
     qDebug() << "Email:" << email << "Password:" << password;
 
-    // Implement the login logic here
     if (email.isEmpty() || password.isEmpty()) {
         QMessageBox::warning(this, "Login Failed", "Please enter both email and password.");
     } else {
-        // Replace with your actual login procedure
-        bool loginSuccessful = (email == "test@example.com" && password == "password");
+        int userID;
+        bool loginSuccessful = DatabaseManager::instance().executeLoginProcedure(email, password, userID);
 
         if (loginSuccessful) {
+            qDebug() << "UserID:" << userID;
             QMessageBox::information(this, "Login Successful", "Welcome!");
             // Proceed to the next step
         } else {
