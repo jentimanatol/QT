@@ -3,15 +3,10 @@
 
 #include <QWidget>
 #include <QSqlDatabase>
-#include <QString>
 
-
-
-QT_BEGIN_NAMESPACE
-namespace Ui {class IncomeEntry;}
-QT_END_NAMESPACE
-
-
+namespace Ui {
+class IncomeEntry;
+}
 
 class IncomeEntry : public QWidget
 {

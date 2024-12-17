@@ -1,11 +1,11 @@
 #include "welcomewindow.h"
-#include "ui_welcomewindow.h"
-#include <QMessageBox>
-#include <QDebug>
+#include "ui_welcome.h" // Ensure this matches the generated file
+#include "incomeentry.h"
+#include "expenseentry.h"
+#include "totalbalance.h"
 
 WelcomeWindow::WelcomeWindow(QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::WelcomeWindow)
+    QWidget(parent), ui(new Ui::WelcomeWindow)
 {
     ui->setupUi(this);
 
@@ -16,8 +16,12 @@ WelcomeWindow::WelcomeWindow(QWidget *parent) :
 
 WelcomeWindow::~WelcomeWindow()
 {
-    //delete ui;
+    delete ui;
 }
+
+
+
+
 
 void WelcomeWindow::setUserDetails(const QString &firstName, const QString &lastName, int userID)
 {
@@ -26,23 +30,27 @@ void WelcomeWindow::setUserDetails(const QString &firstName, const QString &last
     ui->userIDLabel->setText("User ID: " + QString::number(userID));
 }
 
+
+
+
+
+
+
+
 void WelcomeWindow::onIncomeButtonClicked()
 {
-    qDebug() << "Button pressed";
-    // IncomeEntry *incomePage = new IncomeEntry(this);
-    // incomePage->show();
+    IncomeEntry *incomePage = new IncomeEntry(this);
+    incomePage->show();
 }
 
 void WelcomeWindow::onExpenseButtonClicked()
 {
-    qDebug() << "Button pressed";
-    // ExpenseEntry *expensePage = new ExpenseEntry(this);
-    // expensePage->show();
+    ExpenseEntry *expensePage = new ExpenseEntry(this);
+    expensePage->show();
 }
 
 void WelcomeWindow::onTotalButtonClicked()
 {
-    qDebug() << "Button pressed";
-    // TotalBalance *totalPage = new TotalBalance(this);
-    // totalPage->show();
+    TotalBalance *totalPage = new TotalBalance(this);
+    totalPage->show();
 }

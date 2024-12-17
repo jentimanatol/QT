@@ -6,7 +6,6 @@ TARGET = testUserLoginProcedure
 TEMPLATE = app
 
 SOURCES += main.cpp \
-           DatabaseManager.cpp \
            mainwindow.cpp \
            welcomewindow.cpp \
            incomeentry.cpp \
@@ -14,14 +13,13 @@ SOURCES += main.cpp \
            totalbalance.cpp
 
 HEADERS += mainwindow.h \
-           DatabaseManager.h \
            welcomewindow.h \
            incomeentry.h \
            expenseentry.h \
            totalbalance.h
 
 FORMS += mainwindow.ui \
-         welcomewindow.ui \
+         welcome.ui \
          incomeentry.ui \
          expenseentry.ui \
          totalbalance.ui
