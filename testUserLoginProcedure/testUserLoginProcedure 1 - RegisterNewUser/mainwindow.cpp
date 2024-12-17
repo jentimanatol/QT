@@ -33,40 +33,42 @@ void MainWindow::connectToDatabase()
     db.setPort(3306);
 
     if (!db.open()) {
+        qDebug() << "Database connection failed:" << db.lastError().text();
         QMessageBox::critical(this, "Database Connection Failed", db.lastError().text());
     } else {
+        qDebug() << "Database connected successfully!";
         QMessageBox::information(this, "Database Connection", "Database connected successfully!");
     }
 }
 
 void MainWindow::executeLoginProcedure(const QString &username, const QString &password) {
     QSqlQuery query;
+    qDebug() << "Preparing query...";
 
-    query.prepare("CALL UserLoginProcedure(:username, :password, @accessLevel, @userID)");
-    query.bindValue(":username", username);
+    query.prepare("CALL UserLoginProcedure(:email, :password, @userID)");
+    query.bindValue(":email", username);
     query.bindValue(":password", password);
 
+    qDebug() << "Executing query...";
     if (!query.exec()) {
         qDebug() << "Procedure execution failed:" << query.lastError().text();
         QMessageBox::critical(this, "Procedure Execution Failed", query.lastError().text());
         return;
     }
 
-    if (!query.exec("SELECT @accessLevel, @userID")) {
+    qDebug() << "Retrieving output...";
+    if (!query.exec("SELECT @userID")) {
         qDebug() << "Failed to retrieve output variables:" << query.lastError().text();
         QMessageBox::critical(this, "Output Retrieval Failed", query.lastError().text());
         return;
     }
 
     if (query.next()) {
-        int accessLevel = query.value(0).toInt();
-        int userID = query.value(1).toInt();
-
-        qDebug() << "Access Level:" << accessLevel << "UserID:" << userID;
-        QMessageBox::information(this, "Login Result",
-                                 "Access Level: " + QString::number(accessLevel) + "\n" +
-                                     "User ID: " + QString::number(userID));
+        int userID = query.value(0).toInt();
+        qDebug() << "UserID:" << userID;
+        QMessageBox::information(this, "Login Result", "User ID: " + QString::number(userID));
     } else {
+        qDebug() << "Invalid username or password.";
         QMessageBox::warning(this, "Login Failed", "Invalid username or password.");
     }
 }
@@ -74,5 +76,6 @@ void MainWindow::executeLoginProcedure(const QString &username, const QString &p
 void MainWindow::onLoginButtonClicked() {
     QString username = ui->usernameLineEdit->text();
     QString password = ui->passwordLineEdit->text();
+    qDebug() << "Username:" << username << "Password:" << password;
     executeLoginProcedure(username, password);
 }
