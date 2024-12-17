@@ -1,29 +1,7 @@
-
-
-// DatabaseManager.h
-#ifndef DATABASEMANAGER_H
-#define DATABASEMANAGER_H
-
-#include <QString>
-#include <QSqlDatabase>
-
-class DatabaseManager {
-public:
-    static DatabaseManager& instance();
-    bool connectToDatabase();
-    bool executeLoginProcedure(const QString &email, const QString &password, int &userID);
-
-private:
-    DatabaseManager() = default;
-    QSqlDatabase db;
-};
-
-#endif // DATABASEMANAGER_H
-
-// DatabaseManager.cpp
 #include "DatabaseManager.h"
-#include <QSqlError>
+#include <QSqlDatabase>
 #include <QSqlQuery>
+#include <QSqlError>
 #include <QDebug>
 
 DatabaseManager& DatabaseManager::instance() {
@@ -32,7 +10,7 @@ DatabaseManager& DatabaseManager::instance() {
 }
 
 bool DatabaseManager::connectToDatabase() {
-    qDebug() << "Available drivers:" << QSqlDatabase::drivers(); // Verify available drivers
+    qDebug() << "Available drivers:" << QSqlDatabase::drivers();
 
     db = QSqlDatabase::addDatabase("QMYSQL");
     db.setHostName("localhost");
@@ -56,21 +34,18 @@ bool DatabaseManager::executeLoginProcedure(const QString &email, const QString 
         return false;
     }
 
-
-
-
-
-
     QSqlQuery query;
     query.prepare("CALL UserLoginProcedure(:email, :password, @userID)");
     query.bindValue(":email", email);
     query.bindValue(":password", password);
 
+    qDebug() << "Executing query...";
     if (!query.exec()) {
         qDebug() << "Procedure execution failed:" << query.lastError().text();
         return false;
     }
 
+    qDebug() << "Retrieving output...";
     if (!query.exec("SELECT @userID")) {
         qDebug() << "Failed to retrieve output variables:" << query.lastError().text();
         return false;

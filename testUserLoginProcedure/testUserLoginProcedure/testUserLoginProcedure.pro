@@ -22,7 +22,7 @@ HEADERS += mainwindow.h \
            totalbalance.h
 
 FORMS += mainwindow.ui \
-         welcome.ui \
          incomeentry.ui \
          expenseentry.ui \
-         totalbalance.ui
+         totalbalance.ui \
+         welcomewindow.ui

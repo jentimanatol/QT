@@ -1,21 +1,22 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "DatabaseManager.h"
 #include <QMessageBox>
 #include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
+    , userID(-1)  // Initialize userID to an invalid value
 {
     ui->setupUi(this);
+    if (DatabaseManager::instance().connectToDatabase()) {
+        QMessageBox::information(this, "Database Connection", "Database connected successfully!");
+    } else {
+        QMessageBox::critical(this, "Database Connection Failed", "Failed to connect to the database.");
+    }
 
-    // Set up UI components
-    ui->bannerLabel->setText("Welcome to My Application");
-    ui->descriptionLabel->setText("This is a brief description of what the application does.");
-    ui->startButton->setText("Start");
-
-    // Connect the start button to the slot
-    connect(ui->startButton, &QPushButton::clicked, this, &MainWindow::onStartButtonClicked);
+    connect(ui->loginButton, &QPushButton::clicked, this, &MainWindow::onLoginButtonClicked);
 }
 
 MainWindow::~MainWindow()
@@ -23,11 +24,27 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::onStartButtonClicked()
-{
-    // Handle the Start button click
-    qDebug() << "Start button clicked!";
-    QMessageBox::information(this, "Start", "Starting the main functionality...");
+void MainWindow::executeLoginProcedure(const QString &email, const QString &password) {
+    if (DatabaseManager::instance().executeLoginProcedure(email, password, userID)) {
+        if (userID == 0) {
+            QMessageBox::warning(this, "Login Failed", "Invalid username or password.");
+            ui->emailLineEdit->clear();
+            ui->passwordLineEdit->clear();
+            ui->emailLineEdit->setFocus();
+        } else {
+            qDebug() << "UserID:" << userID;
+            QMessageBox::information(this, "Login Result", "User ID: " + QString::number(userID));
+            // Proceed to the next UI step, e.g., show WelcomeWindow
+        }
+    } else {
+        QMessageBox::critical(this, "Procedure Execution Failed", "Failed to execute login procedure.");
+    }
+}
 
-    // You can now proceed to add the main functionality here
+
+
+void MainWindow::onLoginButtonClicked() {
+    QString email = ui->emailLineEdit->text();
+    QString password = ui->passwordLineEdit->text();
+    executeLoginProcedure(email, password);
 }

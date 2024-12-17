@@ -31,10 +31,9 @@ void WelcomeWindow::onLoginButtonClicked()
         int userID;
         bool loginSuccessful = DatabaseManager::instance().executeLoginProcedure(email, password, userID);
 
-        if (loginSuccessful) {
-            qDebug() << "UserID:" << userID;
+        if (loginSuccessful && userID > 0) {
             QMessageBox::information(this, "Login Successful", "Welcome!");
-            // Proceed to the next step
+            // Proceed to the next step, e.g., open the main window
         } else {
             QMessageBox::warning(this, "Login Failed", "Invalid email or password.");
         }

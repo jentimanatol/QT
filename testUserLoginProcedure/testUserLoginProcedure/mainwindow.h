@@ -16,10 +16,12 @@ public:
     ~MainWindow();
 
 private slots:
-    void onStartButtonClicked();
+    void onLoginButtonClicked();
+    void executeLoginProcedure(const QString &email, const QString &password);
 
 private:
     Ui::MainWindow *ui;
+    int userID;
 };
 
 #endif // MAINWINDOW_H
