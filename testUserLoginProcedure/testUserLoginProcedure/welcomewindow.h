@@ -15,12 +15,9 @@ class WelcomeWindow : public QWidget
 public:
     explicit WelcomeWindow(QWidget *parent = nullptr);
     ~WelcomeWindow();
-    void setUserDetails(const QString &firstName, const QString &lastName, int userID);
 
 private slots:
-    void onIncomeButtonClicked();
-    void onExpenseButtonClicked();
-    void onTotalButtonClicked();
+    void onLoginButtonClicked();
 
 private:
     Ui::WelcomeWindow *ui;

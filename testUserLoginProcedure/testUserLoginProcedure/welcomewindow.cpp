@@ -1,17 +1,15 @@
 #include "welcomewindow.h"
-#include "ui_welcome.h" // Ensure this matches the generated file
-#include "incomeentry.h"
-#include "expenseentry.h"
-#include "totalbalance.h"
+#include "ui_welcomewindow.h"
+#include <QMessageBox>
+#include <QDebug>
 
 WelcomeWindow::WelcomeWindow(QWidget *parent) :
-    QWidget(parent), ui(new Ui::WelcomeWindow)
+    QWidget(parent),
+    ui(new Ui::WelcomeWindow)
 {
     ui->setupUi(this);
 
-    connect(ui->incomeButton, &QPushButton::clicked, this, &WelcomeWindow::onIncomeButtonClicked);
-    connect(ui->expenseButton, &QPushButton::clicked, this, &WelcomeWindow::onExpenseButtonClicked);
-    connect(ui->totalButton, &QPushButton::clicked, this, &WelcomeWindow::onTotalButtonClicked);
+    connect(ui->loginButton, &QPushButton::clicked, this, &WelcomeWindow::onLoginButtonClicked);
 }
 
 WelcomeWindow::~WelcomeWindow()
@@ -19,38 +17,25 @@ WelcomeWindow::~WelcomeWindow()
     delete ui;
 }
 
-
-
-
-
-void WelcomeWindow::setUserDetails(const QString &firstName, const QString &lastName, int userID)
+void WelcomeWindow::onLoginButtonClicked()
 {
-    ui->userFirstNameLabel->setText("First Name: " + firstName);
-    ui->userLastNameLabel->setText("Last Name: " + lastName);
-    ui->userIDLabel->setText("User ID: " + QString::number(userID));
-}
+    QString email = ui->emailLineEdit->text();
+    QString password = ui->passwordLineEdit->text();
 
+    qDebug() << "Email:" << email << "Password:" << password;
 
+    // Implement the login logic here
+    if (email.isEmpty() || password.isEmpty()) {
+        QMessageBox::warning(this, "Login Failed", "Please enter both email and password.");
+    } else {
+        // Replace with your actual login procedure
+        bool loginSuccessful = (email == "test@example.com" && password == "password");
 
-
-
-
-
-
-void WelcomeWindow::onIncomeButtonClicked()
-{
-    IncomeEntry *incomePage = new IncomeEntry(this);
-    incomePage->show();
-}
-
-void WelcomeWindow::onExpenseButtonClicked()
-{
-    ExpenseEntry *expensePage = new ExpenseEntry(this);
-    expensePage->show();
-}
-
-void WelcomeWindow::onTotalButtonClicked()
-{
-    TotalBalance *totalPage = new TotalBalance(this);
-    totalPage->show();
+        if (loginSuccessful) {
+            QMessageBox::information(this, "Login Successful", "Welcome!");
+            // Proceed to the next step
+        } else {
+            QMessageBox::warning(this, "Login Failed", "Invalid email or password.");
+        }
+    }
 }
