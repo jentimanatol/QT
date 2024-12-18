@@ -1,7 +1,42 @@
 
+#include <QApplication>
+#include <QDir>
+#include "LogWindow.h"
+#include "DatabaseManager.h"
+
+int main(int argc, char *argv[])
 
 
 
+
+{
+
+
+    qDebug() << "Available SQL drivers:" << QSqlDatabase::drivers();
+
+
+
+
+    QApplication app(argc, argv);
+
+    QCoreApplication::addLibraryPath(QCoreApplication::applicationDirPath() + QDir::separator() + "sqldrivers");
+
+    if (!DatabaseManager::instance().connectToDatabase()) {
+        return -1;
+    }
+
+    LogWindow w;
+    w.show();
+
+    return app.exec();
+}
+
+
+
+
+
+
+/*
 
 //#include <QWidget>
 #include <QApplication>
@@ -26,7 +61,7 @@ int main(int argc, char *argv[])
 }
 
 
-
+*/
 
 
 

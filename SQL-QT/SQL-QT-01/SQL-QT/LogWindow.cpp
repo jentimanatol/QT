@@ -1,30 +1,34 @@
 #include "LogWindow.h"
-#include "ui_LogWindow.h"
-#include "MenuWindow.h" // Include the MenuWindow header
+#include "ui_LogWindow.h" // Include the generated UI header
 
 LogWindow::LogWindow(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::LogWindow),
-    menuWindow(nullptr)
+    userID(-1)
 {
-    ui->setupUi(this);
+    ui->setupUi(this); // Sets up the UI elements from the .ui file
 
-    // Connect the login button to the slot
-    connect(ui->pushButtonLogin, &QPushButton::clicked, this, &LogWindow::onLoginButtonClicked);
+    if (!DatabaseManager::instance().connectToDatabase()) {
+        QMessageBox::critical(this, "Error", "Failed to connect to the database.");
+        return;
+    }
+
+    connect(ui->loginButton, &QPushButton::clicked, this, &LogWindow::attemptLogin);
 }
 
 LogWindow::~LogWindow()
 {
-    delete ui;
-    if (menuWindow) {
-        delete menuWindow;
-    }
+    delete ui; // Properly deletes the UI object
 }
 
-void LogWindow::onLoginButtonClicked() {
-    if (!menuWindow) {
-        menuWindow = new MenuWindow();
+void LogWindow::attemptLogin()
+{
+    QString email = ui->emailLineEdit->text();
+    QString password = ui->passwordLineEdit->text();
+
+    if (DatabaseManager::instance().loginUser(email, password, userID)) {
+        QMessageBox::information(this, "Login Successful", "Welcome, User ID: " + QString::number(userID));
+    } else {
+        QMessageBox::warning(this, "Login Failed", "Invalid email or password.");
     }
-    menuWindow->show();
-    this->hide(); // Hide the LogWindow
 }

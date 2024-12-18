@@ -2,10 +2,11 @@
 #define LOGWINDOW_H
 
 #include <QWidget>
-class MenuWindow; // Forward declaration
+#include <QMessageBox>
+#include "DatabaseManager.h"
 
 namespace Ui {
-class LogWindow;
+class LogWindow; // Forward declaration remains
 }
 
 class LogWindow : public QWidget
@@ -17,11 +18,11 @@ public:
     ~LogWindow();
 
 private slots:
-    void onLoginButtonClicked();
+    void attemptLogin();
 
 private:
-    Ui::LogWindow *ui;
-    MenuWindow *menuWindow; // Pointer to MenuWindow class
+    Ui::LogWindow *ui; // This is fine if ui_LogWindow.h is included in the .cpp
+    int userID;
 };
 
 #endif // LOGWINDOW_H

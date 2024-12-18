@@ -1,74 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>LogWindow</class>
- <widget class="QWidget" name="LogWindow">
+ <class>LoginWindow</class>
+ <widget class="QWidget" name="LoginWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>400</width>
+    <height>300</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Login</string>
   </property>
-  <widget class="QLabel" name="labelEmail">
+  <widget class="QLineEdit" name="emailLineEdit">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>100</y>
-     <width>100</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Email:</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEditEmail">
-   <property name="geometry">
-    <rect>
-     <x>150</x>
-     <y>100</y>
-     <width>200</width>
-     <height>20</height>
+     <x>140</x>
+     <y>60</y>
+     <width>113</width>
+     <height>27</height>
     </rect>
    </property>
   </widget>
-  <widget class="QLabel" name="labelPassword">
+  <widget class="QLineEdit" name="passwordLineEdit">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>150</y>
-     <width>100</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Password:</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEditPassword">
-   <property name="geometry">
-    <rect>
-     <x>150</x>
-     <y>150</y>
-     <width>200</width>
-     <height>20</height>
+     <x>140</x>
+     <y>110</y>
+     <width>113</width>
+     <height>27</height>
     </rect>
    </property>
    <property name="echoMode">
     <enum>QLineEdit::Password</enum>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButtonLogin">
+  <widget class="QPushButton" name="loginButton">
    <property name="geometry">
     <rect>
      <x>150</x>
-     <y>200</y>
-     <width>75</width>
-     <height>24</height>
+     <y>160</y>
+     <width>93</width>
+     <height>28</height>
     </rect>
    </property>
    <property name="text">
