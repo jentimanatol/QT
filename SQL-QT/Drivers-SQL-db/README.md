@@ -152,3 +152,12 @@ After completing these steps, your Qt environment should be properly configured 
 
 Happy coding!
 
+
+
+
+_Not protected by copyright, may be used for its intended purpose._  
+_Author: Anatolie Jentimir._
+
+
+
+

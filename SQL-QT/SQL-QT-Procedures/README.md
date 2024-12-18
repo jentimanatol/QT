@@ -229,3 +229,8 @@ SHOW VARIABLES LIKE '%ssl%';
 
 By following this guide, you’ll be able to manage SQL procedures efficiently and integrate them into your Qt application seamlessly. This template can be extended for future projects as needed.
 
+
+
+_Not protected by copyright, may be used for its intended purpose._  
+_Author: Anatolie Jentimir._
+

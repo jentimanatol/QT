@@ -104,3 +104,12 @@ This project is licensed under the MIT License - see the LICENSE file for detail
  
 ## Contact 
 If you have any questions or suggestions, feel free to contact me at [https://github.com/jentimanatol](https://github.com/jentimanatol). 
+
+
+
+
+_Not protected by copyright, may be used for its intended purpose._  
+_Author: Anatolie Jentimir._
+
+
+

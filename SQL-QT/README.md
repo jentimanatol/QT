@@ -193,3 +193,14 @@ For questions or support, please contact:
 
 Thank you for exploring the **SQL-QT** project!
 
+
+
+
+_Not protected by copyright, may be used for its intended purpose._  
+_Author: Anatolie Jentimir._
+
+
+
+
+
+

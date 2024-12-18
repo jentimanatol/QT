@@ -318,3 +318,13 @@ The **User Management & Account System** demonstrates how SQLite can be used in 
 SQLite’s simplicity, combined with Qt’s cross-platform capabilities, makes this an ideal choice for embedded applications, desktop tools, and mobile apps. By following this guide, you can quickly integrate SQLite into your own Qt applications for efficient data management and persistent storage.
 
 
+
+
+
+_Not protected by copyright, may be used for its intended purpose._  
+_Author: Anatolie Jentimir._
+
+
+
+
+

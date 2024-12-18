@@ -1,0 +1,2 @@
+set /p filename="Enter log file name: "
+echo Cleanup Log > "%filename%.txt"

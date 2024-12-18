@@ -146,17 +146,17 @@ The `Task` class defines the behavior of individual tasks in the list.
 4. **Priority Levels**:
    - Introduce prioritization with visual indicators for tasks.
 
----
 
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
 
----
 
-## Contributing
 
-We welcome contributions to enhance this application. To contribute:
-1. Fork the repository.
-2. Create a branch for your feature or bug fix.
-3. Submit a pull request with a detailed description of your changes.
+_Not protected by copyright, may be used for its intended purpose._  
+_Author: Anatolie Jentimir._
+
+
+
+
+

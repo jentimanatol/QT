@@ -1,0 +1,23 @@
+# Ignore all files except .cpp, .h, .pro, .ui
+# This pattern matches all files
+*
+# Negate the ignoring of specific file extensions
+!*.cpp
+!*.h
+!*.pro
+!*.ui
+
+# Ignore batch files, if you don't want to include them
+*.bat
+
+# Ignore log files
+*.log
+
+# Ignore temporary files
+*.tmp
+*.temp
+*.bak
+
+# Ignore system files
+.DS_Store
+Thumbs.db
