@@ -1,0 +1,20 @@
+Available drivers: QList("QSQLITE", "QMIMER", "QMARIADB", "QMYSQL", "QODBC", "QPSQL")
+qt.sql.qsqldatabase: QSqlDatabase: QMYSQL driver not loaded
+qt.sql.qsqldatabase: QSqlDatabase: available drivers: QSQLITE QMIMER QMARIADB QMYSQL QODBC QPSQL
+Database connection failed: "Driver not loaded Driver not loaded"
+
+
+
+
+
+10:49:17: Starting C:\BHCC\qt\SQL-QT\Test-SQL-db-drivers-conection\TestSQLConnection\build\Desktop_Qt_6_8_1_MinGW_64_bit-Debug\bin\TestSQLConnection.exe...
+Available drivers: QList("QSQLITE", "QMIMER", "QMARIADB", "QMYSQL", "QODBC", "QPSQL")
+Database connection successful!
+10:49:17: C:\BHCC\qt\SQL-QT\Test-SQL-db-drivers-conection\TestSQLConnection\build\Desktop_Qt_6_8_1_MinGW_64_bit-Debug\bin\TestSQLConnection.exe exited with code 0
+
+10:49:30: Starting C:\BHCC\qt\SQL-QT\Test-SQL-db-drivers-conection\TestSQLConnection\build\Desktop_Qt_6_8_1_MinGW_64_bit-Debug\bin\TestSQLConnection.exe...
+Available drivers: QList("QSQLITE", "QMIMER", "QMARIADB", "QMYSQL", "QODBC", "QPSQL")
+Database connection successful!
+10:49:30: C:\BHCC\qt\SQL-QT\Test-SQL-db-drivers-conection\TestSQLConnection\build\Desktop_Qt_6_8_1_MinGW_64_bit-Debug\bin\TestSQLConnection.exe exited with code 0
+
+
