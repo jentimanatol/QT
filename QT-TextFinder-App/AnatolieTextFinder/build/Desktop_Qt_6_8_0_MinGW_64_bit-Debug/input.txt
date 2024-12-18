@@ -1,0 +1,16 @@
+@startuml
+class MainWindow {
+    - Ui::MainWindow *ui
+    + MainWindow(QWidget *parent = nullptr)
+    + ~MainWindow()
+    + void on_findButton_clicked()
+}
+
+class Ui_MainWindow {
+    - QTextEdit *textEdit
+    - QLineEdit *lineEdit
+    - QPushButton *findButton
+}
+
+MainWindow "1" *-- "1" Ui_MainWindow : uses
+@enduml

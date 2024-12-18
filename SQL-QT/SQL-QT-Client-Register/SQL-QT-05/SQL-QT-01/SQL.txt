@@ -1,0 +1,19 @@
+
+
+CREATE DATABASE usermanagement;
+
+USE usermanagement;
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(100) NOT NULL,
+    password VARCHAR(100) NOT NULL
+);
+
+-- Add some test users:
+INSERT INTO users (username, password) VALUES ('admin', 'password123');
+
+
+select * from users;
+
+

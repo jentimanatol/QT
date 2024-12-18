@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>IncomeEntry</class>
+ <widget class="QWidget" name="IncomeEntry">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Income Entry</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QComboBox" name="sourceComboBox">
+      <property name="placeholderText">
+       <string>Select Source</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="amountLineEdit">
+      <property name="placeholderText">
+       <string>Amount</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="descriptionLineEdit">
+      <property name="placeholderText">
+       <string>Description</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QDateEdit" name="dateEdit">
+      <property name="calendarPopup">
+       <bool>true</bool>
+      </property>
+      <property name="date">
+       <date>2024-12-16</date>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="saveIncomeButton">
+      <property name="text">
+       <string>Save Income</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="returnToMenuButton">
+      <property name="text">
+       <string>Return to Menu</string>
+      </property>
+     </widget>
+    </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

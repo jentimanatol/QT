@@ -1,0 +1,12 @@
+Press Ctrl + B or click Build to compile your project.
+
+Press Ctrl + r or click run to run your project.
+
+ctrl shift  S  save  all 
+---------
+Clean Up the Build Directory
+
+rmdir /S /Q debug release
+
+del Makefile Makefile.Debug Makefile.Release
+--------------

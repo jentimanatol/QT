@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>LoginWindow</class>
+ <!-- The main window of the application, derived from QMainWindow -->
+ <widget class="QMainWindow" name="LoginWindow">
+  <property name="geometry">
+   <!-- Set the window size and position (width: 400px, height: 300px) -->
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+
+  <!-- Central widget that will hold all the UI components -->
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <!-- Vertical layout to arrange elements top-to-bottom -->
+
+    <!-- Username input field (QLineEdit) -->
+    <item>
+     <widget class="QLineEdit" name="usernameLineEdit">
+      <property name="placeholderText">
+       <!-- Placeholder text indicating where the user should input their username -->
+       <string>Username</string>
+      </property>
+     </widget>
+    </item>
+
+    <!-- Password input field (QLineEdit) with password mode (hides input characters) -->
+    <item>
+     <widget class="QLineEdit" name="passwordLineEdit">
+      <property name="echoMode">
+       <!-- Set the echo mode to hide the input characters (password input) -->
+       <enum>QLineEdit::EchoMode::Password</enum>
+      </property>
+      <property name="placeholderText">
+       <!-- Placeholder text indicating where the user should input their password -->
+       <string>Password</string>
+      </property>
+     </widget>
+    </item>
+
+    <!-- Login button (QPushButton) to trigger the login action -->
+    <item>
+     <widget class="QPushButton" name="loginButton">
+      <property name="text">
+       <!-- Text label on the button -->
+       <string>Login</string>
+      </property>
+     </widget>
+    </item>
+
+    <!-- Register button (QPushButton) to trigger the user registration action -->
+    <item>
+     <widget class="QPushButton" name="registerButton">
+      <property name="text">
+       <!-- Text label on the button -->
+       <string>Register</string>
+      </property>
+     </widget>
+    </item>
+
+   </layout>
+  </widget>
+ </widget>
+
+ <!-- No external resources or file connections are used in this UI -->
+ <resources/>
+ <connections/>
+</ui>
