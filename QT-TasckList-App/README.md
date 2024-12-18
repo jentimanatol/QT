@@ -1,6 +1,3 @@
-Here is a detailed `README.md` file for your To-Do List Qt application:
-
----
 
 # To-Do List Application
 
@@ -163,7 +160,3 @@ We welcome contributions to enhance this application. To contribute:
 1. Fork the repository.
 2. Create a branch for your feature or bug fix.
 3. Submit a pull request with a detailed description of your changes.
-
----
-
-Let me know if you need further customizations!
