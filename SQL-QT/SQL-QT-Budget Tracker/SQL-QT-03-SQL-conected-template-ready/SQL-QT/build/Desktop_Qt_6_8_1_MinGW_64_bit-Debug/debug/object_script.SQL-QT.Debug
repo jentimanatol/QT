@@ -1,0 +1,13 @@
+debug/ExpenseEntry.o
+debug/IncomeEntry.o
+debug/LogWindow.o
+debug/MenuWindow.o
+debug/TotalBalance.o
+debug/main.o
+debug/widget.o
+debug/moc_ExpenseEntry.o
+debug/moc_IncomeEntry.o
+debug/moc_LogWindow.o
+debug/moc_MenuWindow.o
+debug/moc_TotalBalance.o
+debug/moc_widget.o

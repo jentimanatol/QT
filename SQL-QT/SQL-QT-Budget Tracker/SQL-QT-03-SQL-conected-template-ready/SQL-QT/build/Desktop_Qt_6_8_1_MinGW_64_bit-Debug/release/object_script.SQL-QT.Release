@@ -1,0 +1,13 @@
+release/ExpenseEntry.o
+release/IncomeEntry.o
+release/LogWindow.o
+release/MenuWindow.o
+release/TotalBalance.o
+release/main.o
+release/widget.o
+release/moc_ExpenseEntry.o
+release/moc_IncomeEntry.o
+release/moc_LogWindow.o
+release/moc_MenuWindow.o
+release/moc_TotalBalance.o
+release/moc_widget.o
